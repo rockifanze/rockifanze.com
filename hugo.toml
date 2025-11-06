@@ -1,0 +1,16 @@
+baseURL = 'https://rockifanze.github.io/rockifanze.com/'
+languageCode = 'en-us'
+title = 'rockifanze.com'
+theme = 'simple'
+
+[params]
+  description = "My personal website"
+  author = "rockifanze"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
