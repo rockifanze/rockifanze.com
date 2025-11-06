@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="home">
+    <h2>Welcome to {{ .Site.Title }}</h2>
+    {{ .Content }}
+    
+    {{ $recentPosts := where .Site.RegularPages "Type" "posts" | first 5 }}
+    {{ if $recentPosts }}
+    <h3>Recent Posts</h3>
+    <ul>
+        {{ range $recentPosts }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a> - 
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
+{{ end }}
